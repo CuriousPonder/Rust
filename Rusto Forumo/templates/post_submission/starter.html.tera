@@ -1,0 +1,15 @@
+{% extends "base" %}
+
+{% block main %}
+    <h1>Post Something New!</h1>
+    <form id="new-post" method="post" action="/post_submission/initiate"><nav></nav>
+        <input name="Title" type="text" placeholder="Title" required>
+      <nav></nav>
+        <input name="File" accept ="'jpg, txt, png" placeholder="Upload a File" optional> <button type="Upload">Upload</button>
+      <nav></nav>
+        <textarea name="decription" rows=10 columns=50 placeholder="Description" required></textarea>
+      <nav></nav>
+      <nav></nav>
+        <button type="submit">Post!</button>
+    </form>
+{% endblock main %}

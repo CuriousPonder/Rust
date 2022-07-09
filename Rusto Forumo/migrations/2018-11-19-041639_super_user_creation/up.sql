@@ -1,0 +1,10 @@
+CREATE TABLE superusers ( 
+  id SERIAL PRIMARY KEY UNIQUE,
+  super_id INT UNIQUE,
+  username VARCHAR UNIQUE NOT NULL,
+  firstName VARCHAR NOT NULL,
+  lastName VARCHAR NOT NULL,
+  email_address VARCHAR UNIQUE NOT NULL,
+  password VARCHAR NOT NULL
+);
+

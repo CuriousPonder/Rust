@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<div id="base">
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block title %} Rust Forumo {% endblock title %}</title>
+        <link rel="stylesheet" type="text/css" href="/webpage_design/web.css">
+    </head>
+    <body>
+        <div class="container">
+          <nav id="nav">
+              <h2><strong><a href="/"> Main Page</a></strong></h2>
+                {% if user.is_anonymous %}
+                   <h2><strong> <a href="/user_authentication/login"> Login</a></strong></h2>
+                {% else %}
+                   <h2> <strong><a href="/post_submission/starter">Post Creation</a></strong></h2>
+                   <h2> <strong><a href="/user_authentication/user_settings"> Settings</a></strong></h2>          
+                   <h2> <strong><a href="/user_authentication/logout"> Logout</a></strong></h2>
+                {% endif %}
+            {% block main %}{% endblock main %}
+        </div>
+    </body>
+    </div>
+</html>

@@ -1,0 +1,19 @@
+{% extends "base" %}
+
+{% block main %}
+    <h1>Post Deletion</h1>
+
+    <p>If you delete this post it will be gone forever.</p>
+    <p>Title: {{ post.post_title }}</p>
+    <p>Description: {{ post.description }}</p>
+
+    <form id="delete-post" method="post" action="/post_submission/erase">
+        <input name="id" type="hidden" value="{{ post.id }}" required>
+        <button type="submit" class="button warning">Post Deletion</button>
+    </form>
+
+    <button class="button info">
+      <a href="/">Cancel</a>
+    </button>
+{% endblock main %}
+

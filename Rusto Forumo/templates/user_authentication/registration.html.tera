@@ -1,0 +1,20 @@
+{% extends "base" %}
+
+{% block main %}
+    <h1>Registration</h1>
+
+    {% if flash %}
+        <div class="flash-err">{{ flash.name }} - {{ flash.msg }} </div>
+    {% endif %}
+
+    <form id="registration" method="POST" action="/user_authentication/registration">
+	<input name="username" type="text" placeholder="User Name" required>        
+	<input name="firstname" type="text" placeholder="First Name" required>
+        <input name="lastname" type="text" placeholder="Last Name" required>
+        <input name="email_address" type="text" placeholder="Email Address" required>
+        <input name="password" type="password" placeholder="Password" required>
+        <input name="password_confirm" type="password" placeholder="password confirmation" required>
+        <button type="submit">Complete Registration</button>
+    </form>
+{% endblock main %}
+

@@ -1,0 +1,13 @@
+{% extends "base" %}
+
+{% block main %}
+    <h1>Modify a Post</h1>
+    <form id="edit-post" method="post" action="/post_submission/modify">
+        <input name="id" type="hidden" value="{{ post.id }}" required>
+        <input name="user_id" type="hidden" value="{{ post.user_id }}" required>
+        <input name="post_title" type="text" placeholder="{{ post.post_title }}" required>
+        <textarea name="description" rows=10 columns = 50 placeholder="{{ post.description }}" required></textarea>
+        <button type="submit">Submit Post</button>
+    </form>
+{% endblock main %}
+

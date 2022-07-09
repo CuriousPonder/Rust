@@ -1,0 +1,20 @@
+{% extends "base" %}
+
+{% block main %}
+  {% if user is defined %}
+    {% if user.is_anonymous %}
+    {% else %}
+      {% if user.id == post.userID %}
+        <a href="/post_submission/modify/{{ post.id }}">Modify</a>
+        <a href="/post_submission/deletion/{{ post.id }}">Delete</a>
+      {% endif %}
+    {% endif %}
+  {% endif %}
+  {% if flash %}
+      <div class="flash-err">{{ flash.name }} - {{ flash.msg }} </div>
+  {% endif %}
+  <article class="post">
+    <h2>{{ post.post_title }} by {{ post.username }}</h2>
+    <p>{{ post.description }}</p>
+  </article>
+{% endblock main %}

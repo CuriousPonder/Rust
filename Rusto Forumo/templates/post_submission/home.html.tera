@@ -1,0 +1,15 @@
+{% extends "base" %}
+
+{% block main %}
+<div = 'index_list'>
+    <article class="home">
+        <h1>Welcome to Rusto Forumo</h1>
+        {% for post in posts %}
+            <div class="post-item">
+              <span><a href="/post_submission/viewer/{{ post.id }}">{{ post.post_title }}</a><nav></nav>by {{ post.username }}<nav></nav></span>  
+            </div>
+        {% endfor %}
+    </article>
+</div>
+{% endblock main %}
+

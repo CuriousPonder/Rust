@@ -1,0 +1,14 @@
+CREATE TABLE posts (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER NOT NULL,
+  post_title VARCHAR NOT NULL,
+  description VARCHAR NOT NULL,
+  file_id INTEGER NOT NULL DEFAULT '0',
+  files VARCHAR NOT NULL DEFAULT '',
+  file_size VARCHAR NOT NULL DEFAULT '',
+  file_ext VARCHAR NOT NULL DEFAULT '',
+  file_name VARCHAR NOT NULL DEFAULT '',
+  is_published BOOLEAN NOT NULL DEFAULT 'n'
+);
+
+
